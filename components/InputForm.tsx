@@ -32,7 +32,7 @@ export const InputForm: React.FC<InputFormProps> = ({ onAdd }) => {
   return (
     <form onSubmit={handleSubmit} className="snow-card p-6 rounded-2xl transition-all duration-300 hover:shadow-xl">
       <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-6 flex items-center gap-2">
-        <div className="bg-red-100 dark:bg-red-900/50 p-2 rounded-lg text-red-600 dark:text-red-400">
+        <div className="bg-indigo-100 dark:bg-indigo-900/50 p-2 rounded-lg text-indigo-600 dark:text-indigo-400">
             <User size={20} />
         </div>
         Novo Participante
@@ -46,7 +46,7 @@ export const InputForm: React.FC<InputFormProps> = ({ onAdd }) => {
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Ex: João Silva"
-            className="w-full p-4 bg-slate-50 dark:bg-slate-800/50 border-0 rounded-xl focus:ring-2 focus:ring-red-500 dark:focus:ring-red-400 outline-none text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 transition-all shadow-sm group-hover:bg-white dark:group-hover:bg-slate-800"
+            className="w-full p-4 bg-slate-50 dark:bg-slate-800/50 border-0 rounded-xl focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 outline-none text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 transition-all shadow-sm group-hover:bg-white dark:group-hover:bg-slate-800"
             required
           />
         </div>
@@ -93,7 +93,7 @@ export const InputForm: React.FC<InputFormProps> = ({ onAdd }) => {
 
         <button
           type="submit"
-          className="w-full py-4 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white font-bold rounded-xl transition-all shadow-lg shadow-green-900/20 hover:shadow-green-900/30 transform hover:-translate-y-0.5 flex items-center justify-center gap-2 mt-2"
+          className="w-full py-4 bg-slate-900 hover:bg-black dark:bg-white dark:hover:bg-slate-200 text-white dark:text-slate-900 font-bold rounded-xl transition-all shadow-lg transform hover:-translate-y-0.5 flex items-center justify-center gap-2 mt-2"
         >
           <Plus size={20} />
           Adicionar à Roda

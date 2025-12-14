@@ -36,7 +36,7 @@ export const ParticipantList: React.FC<ParticipantListProps> = ({ participants, 
       
       <div className="flex-1 overflow-y-auto pr-1 space-y-3 max-h-[500px] custom-scrollbar">
         {participants.map((p) => (
-          <div key={p.id} className="group p-4 bg-white/60 dark:bg-slate-800/60 hover:bg-white dark:hover:bg-slate-800 border border-slate-100 dark:border-slate-700 hover:border-red-100 dark:hover:border-red-900/50 rounded-xl transition-all duration-200 shadow-sm hover:shadow-md flex items-start justify-between">
+          <div key={p.id} className="group p-4 bg-white/60 dark:bg-slate-800/60 hover:bg-white dark:hover:bg-slate-800 border border-slate-100 dark:border-slate-700 hover:border-indigo-100 dark:hover:border-indigo-900/50 rounded-xl transition-all duration-200 shadow-sm hover:shadow-md flex items-start justify-between">
             <div className="flex-1 min-w-0 pr-3">
               <div className="flex items-center gap-2 mb-1">
                 <p className="font-bold text-slate-800 dark:text-slate-100 truncate text-base">{p.name}</p>

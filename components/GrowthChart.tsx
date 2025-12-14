@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Participant, Match } from '../types';
-import { AIAnalysis } from './AIAnalysis'; // Reuse the advisor component
 import { Eye, CheckCircle, ArrowRight, MessageCircle, Gift, Check, Sparkles } from 'lucide-react';
 
 interface RevealCardProps {
@@ -44,7 +43,7 @@ export const RevealCard: React.FC<RevealCardProps> = ({ matches, participants, o
           cleanPhone = '55' + cleanPhone;
         }
 
-        const message = `Olá ${giver.name}! 🎅\n\nSou seu organizador do Amigo Secreto IA.\nSeu amigo secreto é...\n\n\n\n🥁 *${receiver.name.toUpperCase()}* 🥁\n\n${receiver.likes ? `Dica: ${receiver.likes}` : ''}\n\n🤫 Guarde segredo!`;
+        const message = `Olá ${giver.name}! 🎅\n\nSou seu organizador do Amigo Secreto 2025.\nSeu amigo secreto é...\n\n\n\n🥁 *${receiver.name.toUpperCase()}* 🥁\n\n${receiver.likes ? `Dica: ${receiver.likes}` : ''}\n\n🤫 Guarde segredo!`;
         
         const url = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`;
         window.open(url, '_blank');
@@ -80,10 +79,10 @@ export const RevealCard: React.FC<RevealCardProps> = ({ matches, participants, o
       {/* Progress Bar - Hide in single mode */}
       {!isSingleMode && (
         <div className="flex items-center gap-3 mb-6">
-            <span className="text-xs font-bold text-white/80 uppercase tracking-widest">{Math.round(progress)}% Completo</span>
-            <div className="flex-1 bg-black/20 h-2 rounded-full overflow-hidden backdrop-blur-sm">
+            <span className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">{Math.round(progress)}% Completo</span>
+            <div className="flex-1 bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
                 <div 
-                className="bg-gradient-to-r from-yellow-300 to-yellow-500 h-full rounded-full transition-all duration-700 ease-out shadow-[0_0_15px_rgba(234,179,8,0.6)]"
+                className="bg-gradient-to-r from-indigo-500 to-violet-500 h-full rounded-full transition-all duration-700 ease-out shadow-[0_0_10px_rgba(99,102,241,0.5)]"
                 style={{ width: `${progress}%` }}
                 />
             </div>
@@ -96,12 +95,12 @@ export const RevealCard: React.FC<RevealCardProps> = ({ matches, participants, o
           
           {viewState === 'waiting' ? (
             <div className="animate-fade-in space-y-8 w-full">
-              <div className="w-28 h-28 bg-gradient-to-br from-red-100 to-red-50 dark:from-red-900/40 dark:to-slate-800 rounded-full flex items-center justify-center mx-auto shadow-inner ring-4 ring-white/50 dark:ring-white/10">
-                <span className="text-5xl drop-shadow-lg">🎅</span>
+              <div className="w-28 h-28 bg-gradient-to-br from-indigo-100 to-indigo-50 dark:from-indigo-900/40 dark:to-slate-800 rounded-full flex items-center justify-center mx-auto shadow-inner ring-4 ring-white/50 dark:ring-white/10">
+                <span className="text-5xl drop-shadow-sm text-indigo-600 dark:text-indigo-400"><Sparkles size={48} fill="currentColor" /></span>
               </div>
               
               <div>
-                <h2 className="text-sm font-bold text-red-500 dark:text-red-400 uppercase tracking-widest mb-2">
+                <h2 className="text-sm font-bold text-indigo-500 dark:text-indigo-400 uppercase tracking-widest mb-2">
                     {isSingleMode ? "Você foi convidado(a)!" : "Agora é a vez de"}
                 </h2>
                 <div className="text-4xl md:text-5xl font-festive font-bold text-slate-800 dark:text-white break-words drop-shadow-sm leading-tight">
@@ -121,7 +120,7 @@ export const RevealCard: React.FC<RevealCardProps> = ({ matches, participants, o
               <div className="flex flex-col gap-3 pt-2">
                 <button
                   onClick={handleReveal}
-                  className="w-full py-4 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white font-bold rounded-2xl shadow-lg hover:shadow-red-500/30 transform hover:scale-[1.02] transition-all flex items-center justify-center gap-3 text-lg"
+                  className="w-full py-4 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-bold rounded-2xl shadow-lg hover:shadow-indigo-500/30 transform hover:scale-[1.02] transition-all flex items-center justify-center gap-3 text-lg"
                 >
                   <Eye size={24} />
                   {isSingleMode ? "Ver quem eu tirei" : "Ver meu Amigo Secreto"}
@@ -149,7 +148,7 @@ export const RevealCard: React.FC<RevealCardProps> = ({ matches, participants, o
               <h3 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-4">Você tirou</h3>
               
               <div className="p-8 bg-gradient-to-b from-slate-50 to-white dark:from-slate-800 dark:to-slate-900 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-inner relative mb-6">
-                <h2 className="text-4xl md:text-5xl font-festive font-bold text-slate-800 dark:text-green-400 break-words drop-shadow-sm mb-3">{receiver.name}</h2>
+                <h2 className="text-4xl md:text-5xl font-festive font-bold text-slate-800 dark:text-white break-words drop-shadow-sm mb-3">{receiver.name}</h2>
                 
                 <div className="flex flex-wrap justify-center gap-2 mt-4">
                     {receiver.likes && (
@@ -162,8 +161,6 @@ export const RevealCard: React.FC<RevealCardProps> = ({ matches, participants, o
                     </span>
                 </div>
               </div>
-
-              <AIAnalysis giver={giver} receiver={receiver} globalBudget={globalBudget} />
 
               <div className="pt-8">
                 {!isSingleMode ? (

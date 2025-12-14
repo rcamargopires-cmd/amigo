@@ -1,5 +1,5 @@
 {
-  "name": "amigo-secreto-ia",
+  "name": "amigo-secreto-2025",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,9 +11,10 @@
   "dependencies": {
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
-    "lucide-react": "^0.561.0",
     "@google/genai": "^1.33.0",
-    "react-markdown": "^10.1.0"
+    "lucide-react": "^0.561.0",
+    "react-markdown": "^10.1.0",
+    "react-qr-code": "2.0.15"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",

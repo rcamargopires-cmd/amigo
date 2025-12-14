@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Amigo Secreto IA - Sorteio e Presentes</title>
+    <title>Amigo Secreto 2025</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -12,10 +12,10 @@
           extend: {
             colors: {
               brand: {
-                red: '#D42426',
-                darkRed: '#8B0000',
-                green: '#107C41',
-                gold: '#F4B400',
+                primary: '#6366f1', // Indigo 500
+                secondary: '#8b5cf6', // Violet 500
+                dark: '#0f172a', // Slate 900
+                surface: '#f8fafc', // Slate 50
               }
             },
             fontFamily: {
@@ -30,13 +30,15 @@
     <style>
       body {
         font-family: 'Inter', sans-serif;
-        background: linear-gradient(135deg, #ef4444 0%, #991b1b 100%);
+        background: linear-gradient(135deg, #e0e7ff 0%, #f3e8ff 100%); /* Light Indigo/Purple gradient */
+        color: #1e293b;
         min-height: 100vh;
         transition: background-color 0.3s ease;
       }
       
       html.dark body {
-        background: linear-gradient(135deg, #450a0a 0%, #1e1b4b 100%);
+        background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); /* Deep Slate/Indigo */
+        color: #f1f5f9;
       }
 
       /* Modern Scrollbar */
@@ -47,11 +49,11 @@
         background: transparent;
       }
       ::-webkit-scrollbar-thumb {
-        background: rgba(255, 255, 255, 0.2);
+        background: rgba(99, 102, 241, 0.2);
         border-radius: 4px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: rgba(255, 255, 255, 0.4);
+        background: rgba(99, 102, 241, 0.4);
       }
 
       .font-festive {
@@ -59,28 +61,29 @@
       }
       
       .snow-card {
-        background: rgba(255, 255, 255, 0.85);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        border: 1px solid rgba(255, 255, 255, 0.5);
-        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
       }
 
       html.dark .snow-card {
-        background: rgba(15, 23, 42, 0.75);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(30, 41, 59, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.05);
         box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
       }
     </style>
-  <script type="importmap">
+<script type="importmap">
 {
   "imports": {
     "react": "https://esm.sh/react@^19.2.3",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
     "react/": "https://esm.sh/react@^19.2.3/",
-    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
     "@google/genai": "https://esm.sh/@google/genai@^1.33.0",
-    "react-markdown": "https://esm.sh/react-markdown@^10.1.0"
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
+    "react-markdown": "https://esm.sh/react-markdown@^10.1.0",
+    "react-qr-code": "https://esm.sh/react-qr-code@2.0.15"
   }
 }
 </script>
